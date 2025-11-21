@@ -1,46 +1,90 @@
-# Astro Starter Kit: Basics
+# 🌊 Pablo Dive - Web Oficial
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Este repositorio contiene el código fuente de la página web oficial de **Pablo Dive**, biólogo marino, activista ambiental y creador de contenido enfocado en el océano y la conservación marina.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El proyecto está construido con **Astro**, priorizando el rendimiento, la optimización SEO y una experiencia de usuario fluida con animaciones modernas.
 
-## 🚀 Project Structure
+## 🚀 Tecnologías
 
-Inside of your Astro project, you'll see the following folders and files:
+El proyecto utiliza un stack moderno centrado en el rendimiento y la experiencia de desarrollo:
+
+- **Framework**: [Astro](https://astro.build/) (v5)
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/) (v4) con [DaisyUI](https://daisyui.com/)
+- **Animaciones**: [GSAP](https://gsap.com/) y [Lenis](https://lenis.studio/) (Smooth Scroll)
+- **Despliegue**: [Vercel](https://vercel.com/) (Adapter Static)
+- **CMS / Contenido**: Content Island
+- **Calidad de Código**: ESLint, Prettier, Husky, Lint-staged
+
+## 🛠️ Requisitos Previos
+
+Asegúrate de tener instalado lo siguiente:
+
+- [Node.js](https://nodejs.org/) (versión LTS recomendada)
+- [pnpm](https://pnpm.io/) (gestor de paquetes utilizado en este proyecto)
+
+## 📦 Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone <url-del-repositorio>
+   cd pablodive
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   pnpm install
+   ```
+
+3. Configura las variables de entorno:
+   Crea un archivo `.env` en la raíz del proyecto basándote en `.env.example` (si existe) o asegúrate de definir las siguientes variables:
+
+   ```env
+   CONTENT_ISLAND_SECRET_TOKEN=tu_token_aqui
+   ```
+
+## scripts 📜 Scripts Disponibles
+
+En el `package.json` encontrarás los siguientes comandos útiles:
+
+| Comando | Descripción |
+| :--- | :--- |
+| `pnpm dev` | Inicia el servidor de desarrollo local en `http://localhost:4321`. |
+| `pnpm build` | Realiza el chequeo de tipos y construye el sitio para producción en `dist/`. |
+| `pnpm preview` | Sirve la versión construida localmente para previsualizarla. |
+| `pnpm clean` | Elimina las carpetas `dist` y `.astro` para una limpieza completa. |
+| `pnpm lint` | Ejecuta ESLint para encontrar problemas en el código. |
+| `pnpm format` | Formatea el código usando Prettier. |
+| `pnpm type-check`| Ejecuta `astro check` para validación de tipos TypeScript. |
+
+## 📂 Estructura del Proyecto
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/            # Archivos estáticos (imágenes, robots.txt, etc.)
+├── src/
+│   ├── components/    # Componentes reutilizables (.astro, .jsx, etc.)
+│   ├── layouts/       # Plantillas de diseño principales
+│   ├── pages/         # Rutas de la aplicación (file-based routing)
+│   └── styles/        # Estilos globales o específicos
+├── astro.config.mjs   # Configuración de Astro
+├── tailwind.config.js # Configuración de Tailwind (si aplica)
+└── package.json       # Dependencias y scripts
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🤝 Contribución
 
-## 🧞 Commands
+Las contribuciones son bienvenidas. Por favor, asegúrate de seguir las reglas de linting y formateo antes de enviar un Pull Request.
 
-All commands are run from the root of the project, from a terminal:
+1. Haz un fork del proyecto.
+2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -m 'Añade nueva funcionalidad'`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 📄 Licencia
 
-## 👀 Want to learn more?
+Este proyecto está bajo la licencia **MIT**. Consulta el archivo `LICENSE` para más detalles.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+Desarrollado por [Rubén Afonso](https://github.com/rubentnf)
