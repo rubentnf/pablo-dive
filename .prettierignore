@@ -1,0 +1,14 @@
+# Ignore artifacts:
+dist
+.astro
+
+# Standard
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+*.md
+
+# lockfiles
+pnpm-lock.yaml
+yarn.lock
