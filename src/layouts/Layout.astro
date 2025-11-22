@@ -1,32 +1,155 @@
 ---
-interface Props {
-  title?: string;
-}
-
-const { title = "Pablo Dive" } = Astro.props;
+import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 import "../styles/global.css";
+
+import { SEO } from "astro-seo";
+
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  canonical?: string;
+  noIndex?: boolean;
+  noFollow?: boolean;
+  publishDate?: Date;
+  authors?: string[];
+  tags?: string[];
+}
+
+const {
+  title = "Pablo Dive - Biólogo Marino y Divulgador Ambiental",
+  description = "Página web de Pablo Dive, biólogo marino, activista ambiental y creador de contenido sobre el océano y la conservación marina.",
+  image = "/og-image.jpg",
+  type = "website",
+  canonical,
+  noIndex = false,
+  noFollow = false,
+  publishDate,
+  authors = ["Pablo Dive"],
+  tags,
+} = Astro.props;
+
+const siteURL = new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedImage = new URL(image, Astro.site).toString();
+const canonicalURL = canonical || siteURL;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta name="generator" content={Astro.generator} />
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      noindex={noIndex}
+      nofollow={noFollow}
+      openGraph={{
+        basic: {
+          title: title,
+          type: type,
+          image: resolvedImage,
+          url: siteURL,
+        },
+        optional: {
+          description: description,
+          siteName: "Pablo Dive",
+          locale: "es_ES",
+        },
+        image: {
+          alt: title,
+        },
+        article:
+          type === "article"
+            ? {
+                publishedTime: publishDate?.toISOString(),
+                authors: authors,
+                tags: tags,
+              }
+            : undefined,
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: title,
+        description: description,
+        image: resolvedImage,
+      }}
+      extend={{
+        meta: [
+          {
+            name: "twitter:image",
+            content: resolvedImage,
+          },
+          {
+            name: "twitter:title",
+            content: title,
+          },
+          {
+            name: "twitter:description",
+            content: description,
+          },
+          { name: "author", content: "Pablo Dive" },
+          {
+            name: "keywords",
+            content:
+              "biología marina, conservación, océano, buceo, canarias, divulgación, medio ambiente, sostenibilidad",
+          },
+          { name: "theme-color", content: "#0a4a6b" },
+        ],
+        link: [{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
+      }}
+    />
+
+    <script
+      is:inline
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="f9767639-4f61-440d-aec7-6c35ec6665b4"></script>
+
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <!-- Skip Link para accesibilidad -->
+    <a href="#main-content" class="skip-link">
+      Saltar al contenido principal
+    </a>
+    <SpeedInsights />
+    <Header transition:persist />
+
+    <main id="main-content" role="main" transition:animate="slide">
+      <slot />
+    </main>
+    <Footer transition:persist />
+
+    <Analytics />
   </body>
 </html>
 
 <style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0a4a6b;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+    font-weight: 500;
+  }
+  .skip-link:focus {
+    top: 0;
   }
 </style>
