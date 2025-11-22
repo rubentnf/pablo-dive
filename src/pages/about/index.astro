@@ -1,0 +1,204 @@
+---
+import "./index.css";
+
+import { marked } from "marked";
+
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getAbout } from "./about.api";
+import { Icon } from "astro-icon/components";
+
+const about = await getAbout();
+const aboutExtendedBio = marked(about.extendedBio || "");
+---
+
+<Layout title="Sobre mí | Pablo Dive" description={about.shortBio}>
+  <div class="min-h-screen bg-slate-100 p-4 sm:p-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <header class="mb-8 flex justify-between items-end">
+        <div>
+          <h1 class="text-4xl font-bold text-slate-900">
+            {about.fullname}
+            <span class="text-2xl">🤿</span>
+          </h1>
+          <p class="text-slate-500">Biólogo Marino y Creador de Contenido.</p>
+        </div>
+      </header>
+
+      <!-- Bento Grid -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px, auto)]"
+      >
+        <!-- Main Bio Card (Large) -->
+        <div
+          class="md:col-span-2 lg:col-span-2 row-span-2 bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
+        >
+          <div>
+            <h2 class="text-2xl font-bold mb-4 text-slate-900">Sobre mí</h2>
+            <p class="text-slate-600 leading-relaxed text-lg">
+              {about.shortBio}
+            </p>
+            <p class="text-slate-600 leading-relaxed mt-4">
+              Combinando la ciencia rigurosa con la comunicación digital para
+              crear un impacto real en la conservación de los océanos.
+            </p>
+          </div>
+          <div class="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+            <span
+              class="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-600"
+            >
+              Biología</span
+            >
+            <span
+              class="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-600"
+            >
+              Divulgación
+            </span>
+            <span
+              class="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-600"
+            >
+              Fotografía
+            </span>
+            <span
+              class="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-600"
+            >
+              Submarinismo
+            </span>
+          </div>
+        </div>
+
+        <!-- Foto Card -->
+        <div
+          class="md:col-span-1 lg:col-span-2 row-span-2 relative rounded-3xl overflow-hidden group min-h-[500px] md:min-h-0"
+        >
+          <img
+            src={about.picture.url}
+            alt="Pablo Dive"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8"
+          >
+            <div class="text-white">
+              <p class="font-medium">Tenerife, Islas Canarias 🇮🇨</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Card 1 -->
+        <div
+          class="bg-slate-900 text-white rounded-3xl p-6 flex flex-col justify-center items-center text-center hover:bg-slate-800"
+        >
+          <span class="text-4xl font-bold mb-2 text-cyan-400">294K</span>
+          <span class="text-sm opacity-70">Seguidores totales</span>
+        </div>
+
+        <!-- Stats Card 2 -->
+        <div
+          class="bg-white rounded-3xl p-6 flex flex-col justify-center items-center text-center shadow-sm hover:shadow-md"
+        >
+          <span class="text-4xl font-bold mb-2 text-slate-900">+10</span>
+          <span class="text-sm text-slate-500"
+            >Años buceando alrededor del mundo</span
+          >
+        </div>
+
+        <!-- Quick Link Card -->
+        <a
+          href="/contact"
+          class="bg-cyan-500 text-white rounded-3xl p-6 flex flex-col justify-between hover:bg-cyan-400"
+        >
+          <div
+            class="self-end group-hover:translate-x-1 group-hover:-translate-y-1"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+            >
+          </div>
+          <div>
+            <span class="block text-2xl font-bold">Colaborar</span>
+            <span class="text-sm opacity-90">Contáctame para colaborar</span>
+          </div>
+        </a>
+
+        <!-- Stats Card 3 -->
+        <div
+          class="bg-white rounded-3xl p-6 flex flex-col justify-center items-center text-center shadow-sm hover:shadow-md"
+        >
+          <span class="text-4xl font-bold mb-2 text-slate-900">+150</span>
+          <span class="text-sm text-slate-500">Especies filmadas</span>
+        </div>
+
+        <!-- Philosophy Card -->
+        <div
+          class="md:col-span-1 bg-slate-900 text-white rounded-3xl p-6 flex flex-col justify-between group hover:bg-slate-800"
+        >
+          <div class="text-cyan-400 text-3xl mb-4">✦</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Filosofía</h3>
+            <p class="text-sm text-slate-400">
+              Conservación activa a través de la educación.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quote Card -->
+        <div
+          class="md:col-span-2 lg:col-span-2 bg-white rounded-3xl p-8 shadow-sm flex items-center justify-center text-center hover:shadow-md transition-shadow"
+        >
+          <blockquote class="text-xl font-medium text-slate-800 italic">
+            "El océano no necesita más gente que lo salve, necesita más gente
+            que lo ame."
+          </blockquote>
+        </div>
+
+        <!-- Social Links -->
+        <div
+          class="bg-white rounded-3xl p-6 flex items-center justify-center gap-4 shadow-sm"
+        >
+          <a
+            href="https://instagram.com/pablo.dive"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 px-4 py-2 text-slate-700 font-medium group"
+          >
+            <Image
+              src="/instagram-logo.svg"
+              alt="Logotipo de Instagram"
+              class="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-300"
+              width={20}
+              height={20}
+              format="svg"
+            />
+            Instagram
+          </a>
+          <a
+            href="https://www.tiktok.com/@pablo.dive"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 px-4 py-2 text-slate-700 font-medium group"
+          >
+            <Image
+              src="/tiktok-logo.svg"
+              alt="Logotipo de TikTok"
+              class="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-300"
+              width={20}
+              height={20}
+              format="svg"
+            />
+            TikTok
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
