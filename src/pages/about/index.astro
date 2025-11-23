@@ -1,12 +1,9 @@
 ---
-import "./index.css";
-
+import { Image } from "astro:assets";
 import { marked } from "marked";
 
 import Layout from "../../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import { getAbout } from "./about.api";
-import { Icon } from "astro-icon/components";
 
 const about = await getAbout();
 const aboutExtendedBio = marked(about.extendedBio || "");
@@ -35,14 +32,13 @@ const aboutExtendedBio = marked(about.extendedBio || "");
           class="md:col-span-2 lg:col-span-2 row-span-2 bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
         >
           <div>
-            <h2 class="text-2xl font-bold mb-4 text-slate-900">Sobre mí</h2>
             <p class="text-slate-600 leading-relaxed text-lg">
               {about.shortBio}
             </p>
-            <p class="text-slate-600 leading-relaxed mt-4">
+            <!-- <p class="text-slate-600 leading-relaxed mt-4">
               Combinando la ciencia rigurosa con la comunicación digital para
               crear un impacto real en la conservación de los océanos.
-            </p>
+            </p> -->
           </div>
           <div class="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
             <span
@@ -80,9 +76,6 @@ const aboutExtendedBio = marked(about.extendedBio || "");
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8"
           >
-            <div class="text-white">
-              <p class="font-medium">Tenerife, Islas Canarias 🇮🇨</p>
-            </div>
           </div>
         </div>
 
@@ -163,20 +156,20 @@ const aboutExtendedBio = marked(about.extendedBio || "");
 
         <!-- Social Links -->
         <div
-          class="bg-white rounded-3xl p-6 flex items-center justify-center gap-4 shadow-sm"
+          class="bg-white rounded-3xl p-6 flex flex-col justify-center gap-4 shadow-sm"
         >
           <a
             href="https://instagram.com/pablo.dive"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-2 px-4 py-2 text-slate-700 font-medium group"
+            class="flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-xl text-white font-bold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
           >
             <Image
               src="/instagram-logo.svg"
               alt="Logotipo de Instagram"
-              class="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-300"
-              width={20}
-              height={20}
+              class="w-6 h-6 object-contain brightness-0 invert"
+              width={24}
+              height={24}
               format="svg"
             />
             Instagram
@@ -185,20 +178,30 @@ const aboutExtendedBio = marked(about.extendedBio || "");
             href="https://www.tiktok.com/@pablo.dive"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-2 px-4 py-2 text-slate-700 font-medium group"
+            class="flex items-center justify-center gap-3 px-4 py-3 bg-black rounded-xl text-white font-bold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
           >
             <Image
               src="/tiktok-logo.svg"
               alt="Logotipo de TikTok"
-              class="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-300"
-              width={20}
-              height={20}
+              class="w-6 h-6 object-contain brightness-0 invert"
+              width={24}
+              height={24}
               format="svg"
             />
             TikTok
           </a>
         </div>
+
+        <div
+          class="md:col-span-3 lg:col-span-4 row-span-2 bg-white rounded-3xl p-8 shadow-sm flex flex-col justify-between"
+        >
+          <div
+            class="prose prose-slate prose-lg max-w-none"
+            set:html={aboutExtendedBio}
+          />
+        </div>
       </div>
     </div>
   </div>
 </Layout>
+```
