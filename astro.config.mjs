@@ -7,29 +7,17 @@ import playformCompress from "@playform/compress";
 import playformFormat from "@playform/format";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField } from "astro/config";
-import { loadEnv } from "vite";
-
-const { SITE_URL } = loadEnv(
-  process.env.NODE_ENV || "development",
-  process.cwd(),
-  "",
-);
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE_URL || "https://www.pablodive.es",
-  integrations: [
-    sitemap(),
-    playformCompress({
-      CSS: true,
-      HTML: true,
-      JavaScript: true,
-      Image: false,
-      SVG: true,
-    }),
-
-    playformFormat(),
-  ],
+  site: process.env.SITE_URL || "https://www.pablodive.es",
+  integrations: [sitemap(), playformCompress({
+    CSS: true,
+    HTML: true,
+    JavaScript: true,
+    Image: false,
+    SVG: true,
+  }), playformFormat()],
   vite: {
     resolve: {
       alias: {
