@@ -1,0 +1,49 @@
+---
+import IconWeb from "./icons/IconWeb.astro";
+import IconFacebook from "./icons/IconFacebook.astro";
+import IconX from "./icons/IconX.astro";
+import IconInstagram from "./icons/IconInstagram.astro";
+import IconTikTok from "./icons/IconTikTok.astro";
+
+interface Props {
+  href?: string;
+  icon: "web" | "facebook" | "x" | "instagram" | "tiktok";
+  label: string;
+}
+
+const { href, icon, label } = Astro.props;
+
+// Si no hay URL, no renderizamos nada
+if (!href) return null;
+
+// Mapeo de iconos a componentes
+const icons = {
+  web: IconWeb,
+  facebook: IconFacebook,
+  x: IconX,
+  instagram: IconInstagram,
+  tiktok: IconTikTok,
+};
+
+// Mapeo de iconos a colores de hover
+const hoverColors = {
+  web: "hover:text-cyan-600",
+  facebook: "hover:text-blue-600",
+  x: "hover:text-black",
+  instagram: "hover:text-pink-600",
+  tiktok: "hover:text-black",
+};
+
+const Icon = icons[icon];
+const hoverColor = hoverColors[icon];
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`text-slate-400 ${hoverColor} transition-colors`}
+  aria-label={label}
+>
+  <Icon class="w-5 h-5" />
+</a>
