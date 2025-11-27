@@ -1,7 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import { marked } from "marked";
 
+import IconInstagram from "../../components/icons/IconInstagram.astro";
+import IconTikTok from "../../components/icons/IconTikTok.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getAbout } from "./about.api";
 
@@ -164,14 +165,7 @@ const aboutExtendedBio = marked(about.extendedBio || "");
             rel="noopener noreferrer"
             class="flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-xl text-white font-bold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
           >
-            <Image
-              src="/instagram-logo.svg"
-              alt="Logotipo de Instagram"
-              class="w-6 h-6 object-contain brightness-0 invert"
-              width={24}
-              height={24}
-              format="svg"
-            />
+            <IconInstagram class="w-6 h-6 text-white" />
             Instagram
           </a>
           <a
@@ -180,14 +174,7 @@ const aboutExtendedBio = marked(about.extendedBio || "");
             rel="noopener noreferrer"
             class="flex items-center justify-center gap-3 px-4 py-3 bg-black rounded-xl text-white font-bold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
           >
-            <Image
-              src="/tiktok-logo.svg"
-              alt="Logotipo de TikTok"
-              class="w-6 h-6 object-contain brightness-0 invert"
-              width={24}
-              height={24}
-              format="svg"
-            />
+            <IconTikTok class="w-6 h-6 text-white" />
             TikTok
           </a>
         </div>
