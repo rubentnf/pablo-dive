@@ -4,7 +4,10 @@ export interface Project {
   id: string;
   title: string;
   image: Media;
-  url?: string;
   isEnabled: boolean;
-  summary?: string;
+  webURL?: string;
+  twitterURL?: string;
+  tiktokURL?: string;
+  instagramURL?: string;
+  facebookURL?: string;
 }
