@@ -10,7 +10,7 @@ export async function getProjects(): Promise<Project[]> {
 
 export async function getEnabledProjects(): Promise<Project[]> {
   const projects = await getProjects();
-  return projects.filter((project) => project.isEnabled).slice(0, 6);
+  return projects.filter((project) => project.isEnabled);
 }
 
 export async function GET(): Promise<Response> {
