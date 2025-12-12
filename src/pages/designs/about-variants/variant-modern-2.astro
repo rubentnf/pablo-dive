@@ -1,0 +1,51 @@
+---
+import { marked } from "marked";
+import { getAbout } from "../../sobre-mi/about.api";
+import Layout from "../../../layouts/Layout.astro";
+const about = await getAbout();
+const aboutExtendedBio = marked(about.extendedBio || "");
+---
+<Layout title="Sobre mí | Moderno 2" description={about.shortBio}>
+  <section class="min-h-screen flex flex-col justify-center items-center bg-white dark:bg-slate-900 px-4 py-12" role="main" aria-label="Sobre mí Pablo Dive">
+    <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="flex flex-col items-center md:items-start animate-slidein">
+        <img src={about.picture.url} alt="Pablo Dive" class="w-40 h-40 rounded-2xl object-cover mb-6 shadow-lg border-4 border-cyan-700 dark:border-cyan-400 animate-float" width="160" height="160" loading="lazy" />
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">{about.fullname} <span class="text-2xl">🤿</span></h1>
+        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-4 font-light">{about.shortBio}</p>
+        <blockquote class="italic text-xl text-cyan-700 dark:text-cyan-400 mb-4 animate-fadein">"El océano no necesita más gente que lo salve, necesita más gente que lo ame."</blockquote>
+        <a href="/contact" class="inline-block bg-gradient-to-r from-cyan-700 to-blue-700 dark:from-cyan-400 dark:to-blue-500 px-6 py-3 rounded-full text-white font-bold shadow-lg hover:scale-105 transition-all duration-300 animate-fadein2" aria-label="Colabora conmigo">Colabora conmigo</a>
+      </div>
+      <div class="flex flex-col gap-6 animate-slidein2">
+        <div class="bg-gradient-to-r from-cyan-700 to-blue-700 dark:from-cyan-400 dark:to-blue-500 rounded-2xl p-6 shadow-lg text-white text-center">
+          <span class="text-3xl md:text-4xl font-bold">294K</span>
+          <div class="text-sm md:text-base">Seguidores</div>
+        </div>
+        <div class="bg-gradient-to-r from-blue-700 to-purple-700 dark:from-blue-500 dark:to-purple-500 rounded-2xl p-6 shadow-lg text-white text-center">
+          <span class="text-3xl md:text-4xl font-bold">+10</span>
+          <div class="text-sm md:text-base">Años buceando</div>
+        </div>
+        <div class="bg-gradient-to-r from-purple-700 to-pink-700 dark:from-purple-500 dark:to-pink-500 rounded-2xl p-6 shadow-lg text-white text-center">
+          <span class="text-3xl md:text-4xl font-bold">+150</span>
+          <div class="text-sm md:text-base">Especies filmadas</div>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg text-center">
+          <div class="prose max-w-none mb-2 text-slate-700 dark:text-slate-200" set:html={aboutExtendedBio} />
+        </div>
+        <div class="flex gap-4 justify-center mt-2">
+          <a href="https://instagram.com/pablo.dive" target="_blank" rel="noopener" class="bg-gradient-to-r from-pink-700 to-orange-700 dark:from-pink-500 dark:to-orange-400 px-5 py-2 rounded-xl text-white font-bold shadow-lg hover:scale-110 transition-all duration-300" aria-label="Instagram Pablo Dive">Instagram</a>
+          <a href="https://www.tiktok.com/@pablo.dive" target="_blank" rel="noopener" class="bg-black dark:bg-slate-700 px-5 py-2 rounded-xl text-white font-bold shadow-lg hover:scale-110 transition-all duration-300" aria-label="TikTok Pablo Dive">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <style>
+      .animate-float {animation: float 3s ease-in-out infinite;}
+      @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+      .animate-slidein {animation: slidein 1.2s cubic-bezier(.68,-0.55,.27,1.55) 0.2s both;}
+      .animate-slidein2 {animation: slidein 1.2s cubic-bezier(.68,-0.55,.27,1.55) 0.5s both;}
+      @keyframes slidein {from{opacity:0;transform:translateX(-40px);}to{opacity:1;transform:translateX(0);}}
+      .animate-fadein {animation: fadein 1.2s cubic-bezier(.68,-0.55,.27,1.55) 0.7s both;}
+      .animate-fadein2 {animation: fadein 1.2s cubic-bezier(.68,-0.55,.27,1.55) 1s both;}
+      @keyframes fadein {from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+    </style>
+  </section>
+</Layout>
