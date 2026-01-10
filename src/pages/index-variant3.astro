@@ -35,16 +35,31 @@ const sections = [
 ];
 ---
 
-<Layout title="Pablo Dive - Landing cards coloridas" description="Landing con cards coloridas para cada sección.">
-  <section class="flex flex-col items-center justify-center min-h-[60vh] py-16 text-center">
+<Layout
+  title="Pablo Dive - Landing cards coloridas"
+  description="Landing con cards coloridas para cada sección."
+>
+  <section
+    class="flex flex-col items-center justify-center min-h-[60vh] py-16 text-center"
+  >
     <h1 class="text-4xl font-bold mb-2">Pablo Martín</h1>
-    <p class="text-lg max-w-xl mx-auto mb-8 text-base-content/80">Biólogo marino, divulgador ambiental y explorador de los océanos. Descubre mis proyectos, viajes y divulgación científica.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl mt-8">
-      {sections.map(section => (
-        <a href={section.href} class={`block rounded-xl p-6 shadow-lg hover:scale-[1.03] transition-transform font-semibold text-lg ${section.color}`}>
-          {section.title}
-        </a>
-      ))}
+    <p class="text-lg max-w-xl mx-auto mb-8 text-base-content/80">
+      Biólogo marino, divulgador ambiental y explorador de los océanos. Descubre
+      mis proyectos, viajes y divulgación científica.
+    </p>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl mt-8"
+    >
+      {
+        sections.map((section) => (
+          <a
+            href={section.href}
+            class={`block rounded-xl p-6 shadow-lg hover:scale-[1.03] transition-transform font-semibold text-lg ${section.color}`}
+          >
+            {section.title}
+          </a>
+        ))
+      }
     </div>
   </section>
 </Layout>

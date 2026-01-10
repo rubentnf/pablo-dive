@@ -1,14 +1,17 @@
 ---
 import { marked } from "marked";
-import { getAbout } from "../../sobre-mi/about.api";
+
 import Layout from "../../../layouts/Layout.astro";
+import { getAbout } from "../../sobre-mi/about.api";
 const about = await getAbout();
 const aboutExtendedBio = marked(about.extendedBio || "");
 ---
 
 <Layout title="Sobre mí | Moderno 3" description={about.shortBio}>
   <section
-    class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr from-slate-900 via-cyan-500 to-pink-400 dark:from-slate-900 dark:via-cyan-700 dark:to-pink-700 px-4 py-12" role="main" aria-label="Sobre mí Pablo Dive"
+    class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr from-slate-900 via-cyan-500 to-pink-400 dark:from-slate-900 dark:via-cyan-700 dark:to-pink-700 px-4 py-12"
+    role="main"
+    aria-label="Sobre mí Pablo Dive"
   >
     <div
       class="w-full max-w-3xl bg-white/90 dark:bg-slate-900/90 rounded-3xl shadow-2xl p-10 flex flex-col items-center text-center animate-fadein"
@@ -17,7 +20,9 @@ const aboutExtendedBio = marked(about.extendedBio || "");
         src={about.picture.url}
         alt="Pablo Dive"
         class="w-28 h-28 rounded-full object-cover mb-4 border-4 border-pink-700 dark:border-pink-400 animate-float"
-        width="112" height="112" loading="lazy"
+        width="112"
+        height="112"
+        loading="lazy"
       />
       <h1
         class="text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight"
@@ -28,7 +33,9 @@ const aboutExtendedBio = marked(about.extendedBio || "");
       <!-- <p class="text-lg md:text-xl text-slate-700 mb-4 font-light">
         {about.shortBio}
       </p> -->
-      <blockquote class="italic text-xl text-cyan-700 dark:text-cyan-400 mb-4 animate-fadein2">
+      <blockquote
+        class="italic text-xl text-cyan-700 dark:text-cyan-400 mb-4 animate-fadein2"
+      >
         "El océano no necesita más gente que lo salve, necesita más gente que lo
         ame."
       </blockquote>
@@ -49,7 +56,9 @@ const aboutExtendedBio = marked(about.extendedBio || "");
           class="bg-gradient-to-r from-purple-700 to-pink-700 dark:from-purple-500 dark:to-pink-500 rounded-xl px-6 py-4 shadow-lg text-center animate-pop3"
         >
           <span class="text-2xl md:text-3xl font-bold text-white">+150</span>
-          <div class="text-sm md:text-base text-white/80">Especies filmadas</div>
+          <div class="text-sm md:text-base text-white/80">
+            Especies filmadas
+          </div>
         </div>
       </div>
       <div
@@ -59,8 +68,7 @@ const aboutExtendedBio = marked(about.extendedBio || "");
       <a
         href="/contact"
         class="inline-block bg-gradient-to-r from-pink-700 to-cyan-700 dark:from-pink-400 dark:to-cyan-400 px-8 py-4 rounded-full text-white font-bold shadow-lg hover:scale-105 transition-all duration-300 animate-fadein3"
-        aria-label="Colabora conmigo"
-        >Colabora conmigo</a
+        aria-label="Colabora conmigo">Colabora conmigo</a
       >
       <div class="flex gap-4 justify-center mt-8 animate-fadein4">
         <a
@@ -68,16 +76,14 @@ const aboutExtendedBio = marked(about.extendedBio || "");
           target="_blank"
           rel="noopener"
           class="bg-gradient-to-r from-pink-700 to-orange-700 dark:from-pink-400 dark:to-orange-400 px-5 py-2 rounded-xl text-white font-bold shadow-lg hover:scale-110 transition-all duration-300"
-          aria-label="Instagram Pablo Dive"
-          >Instagram</a
+          aria-label="Instagram Pablo Dive">Instagram</a
         >
         <a
           href="https://www.tiktok.com/@pablo.dive"
           target="_blank"
           rel="noopener"
           class="bg-black dark:bg-slate-700 px-5 py-2 rounded-xl text-white font-bold shadow-lg hover:scale-110 transition-all duration-300"
-          aria-label="TikTok Pablo Dive"
-          >TikTok</a
+          aria-label="TikTok Pablo Dive">TikTok</a
         >
       </div>
     </div>

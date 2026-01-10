@@ -35,16 +35,31 @@ const sections = [
 ];
 ---
 
-<Layout title="Pablo Dive - Escaparate minimalista" description="Landing minimalista con acceso rápido a todas las secciones.">
-  <section class="flex flex-col items-center justify-center min-h-[60vh] py-16 text-center">
-    <h1 class="text-5xl font-extrabold mb-4 tracking-tight">Hola, soy Pablo Martín</h1>
-    <p class="text-lg max-w-2xl mx-auto mb-8 text-base-content/80">Biólogo marino, divulgador ambiental y explorador de los océanos. Descubre mis proyectos, viajes y divulgación científica.</p>
+<Layout
+  title="Pablo Dive - Escaparate minimalista"
+  description="Landing minimalista con acceso rápido a todas las secciones."
+>
+  <section
+    class="flex flex-col items-center justify-center min-h-[60vh] py-16 text-center"
+  >
+    <h1 class="text-5xl font-extrabold mb-4 tracking-tight">
+      Hola, soy Pablo Martín
+    </h1>
+    <p class="text-lg max-w-2xl mx-auto mb-8 text-base-content/80">
+      Biólogo marino, divulgador ambiental y explorador de los océanos. Descubre
+      mis proyectos, viajes y divulgación científica.
+    </p>
     <div class="flex flex-wrap gap-4 justify-center">
-      {sections.map(section => (
-        <a href={section.href} class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-base-200 bg-base-100 shadow hover:bg-base-200 transition-colors text-lg font-medium">
-          <span class="text-2xl">{section.icon}</span> {section.title}
-        </a>
-      ))}
+      {
+        sections.map((section) => (
+          <a
+            href={section.href}
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-base-200 bg-base-100 shadow hover:bg-base-200 transition-colors text-lg font-medium"
+          >
+            <span class="text-2xl">{section.icon}</span> {section.title}
+          </a>
+        ))
+      }
     </div>
   </section>
 </Layout>
