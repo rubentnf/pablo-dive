@@ -25,6 +25,8 @@ jobs:
 
       - name: Build project
         run: pnpm build
+        env:
+          CONTENT_ISLAND_API_KEY: ${{ secrets.CONTENT_ISLAND_API_KEY }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
