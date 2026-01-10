@@ -11,6 +11,7 @@ import { defineConfig, envField } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: process.env.SITE_URL || "https://www.pablodive.es",
+  base: '/pablo-dive/',
   integrations: [
     sitemap(),
     playformCompress({
