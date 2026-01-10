@@ -1,8 +1,8 @@
 // @ts-check
 import { fileURLToPath, URL } from "node:url";
 
-import staticAdapter from "@astrojs/adapter-static";
 import sitemap from "@astrojs/sitemap";
+import vercel from "@astrojs/vercel";
 import playformCompress from "@playform/compress";
 import playformFormat from "@playform/format";
 import tailwindcss from "@tailwindcss/vite";
@@ -34,7 +34,9 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: "static",
-  adapter: staticAdapter(),
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
   env: {
     schema: {
       CONTENT_ISLAND_SECRET_TOKEN: envField.string({
