@@ -1,84 +1,122 @@
 ---
+// Página de mantenimiento lista para usar
 ---
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sitio en Mantenimiento - Pablo Dive</title>
-    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://pablodive.es/maintenance" />
     <style>
-      body {
-        min-height: 100vh;
+      * {
         margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #fff;
-        font-family: 'Inter', Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: white;
         text-align: center;
-        padding: 0 1rem;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>')
+          bottom/100% auto no-repeat;
+        opacity: 0.3;
       }
       .container {
         max-width: 600px;
         width: 100%;
-        background: rgba(255,255,255,0.08);
-        border-radius: 15px;
-        padding: 2.5rem 1.5rem;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
         position: relative;
+        z-index: 1;
       }
       .icon {
         font-size: 5rem;
         margin-bottom: 2rem;
-        animation: bounce 1.5s infinite;
+        animation: bounce 2s ease-in-out infinite;
       }
       @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
       }
       h1 {
-        font-size: clamp(2rem,5vw,3.5rem);
-        font-weight: bold;
+        font-size: clamp(2rem, 5vw, 3.5rem);
         margin-bottom: 1.5rem;
+        font-weight: 700;
         line-height: 1.2;
       }
       p {
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        margin-bottom: 2rem;
         opacity: 0.95;
-        margin-bottom: 1.5rem;
         line-height: 1.6;
       }
-      .contact {
-        margin-top: 2rem;
-        background: rgba(255,255,255,0.10);
+      .logo {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .info {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
         border-radius: 15px;
         padding: 2rem;
+        margin-top: 2rem;
       }
-      .contact a {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-        background: rgba(255,255,255,0.20);
-        color: #fff;
-        padding: 0.8rem 1.5rem;
-        border-radius: 10px;
-        font-size: 1.1rem;
+      .info p {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+      }
+      .social {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .social a {
+        color: white;
         text-decoration: none;
-        transition: background 0.3s, transform 0.3s;
+        padding: 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        font-size: 1.1rem;
       }
-      .contact a:hover {
-        background: rgba(255,255,255,0.30);
+      .social a:hover {
+        background: rgba(255, 255, 255, 0.3);
         transform: translateY(-3px);
       }
-      .contact svg {
-        width: 1.5em;
-        height: 1.5em;
+      .social svg {
+        width: 24px;
+        height: 24px;
         fill: currentColor;
       }
     </style>
@@ -87,7 +125,39 @@
     <div class="container">
       <div class="icon">🔧</div>
       <h1>Estamos mejorando tu experiencia</h1>
-      <p>Nuestro sitio está en mantenimiento mientras añadimos nuevas funcionalidades increíbles.</p>
-      <p style="opacity:0.85;">Volveremos muy pronto con nuevas aventuras submarinas.</p>
+      <p>
+        Nuestro sitio está en mantenimiento mientras añadimos nuevas
+        funcionalidades increíbles.
+      </p>
+      <p style="font-size: 1rem; opacity: 0.85;">
+        Volveremos muy pronto con nuevas aventuras submarinas.
+      </p>
+
+      <div class="info">
+        <p><strong>¿Necesitas contactarnos?</strong></p>
+        <div class="social">
+          <a
+            href="https://instagram.com/pablo.dive"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              ></path>
+            </svg>
+            Instagram
+          </a>
+          <a href="mailto:pablodive@tangentedigital.es">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              ></path>
+            </svg>
+            Email
+          </a>
+        </div>
+      </div>
     </div>
   </body>
+</html>
