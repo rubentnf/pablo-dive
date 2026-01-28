@@ -172,9 +172,13 @@ import { Image } from "astro:assets";
         moon.style.display = isDark ? "none" : "inline";
       }
     }
-    function applyTheme(theme) {
+    /* function applyTheme(theme) {
       document.documentElement.setAttribute("data-theme", theme);
       setThemeIcon(theme === "dark");
+    } */
+    function applyTheme() {
+      document.documentElement.setAttribute("data-theme", "light");
+      setThemeIcon(false); // Opcional, para mostrar el icono de sol/luna
     }
     function toggleTheme() {
       const html = document.documentElement;
@@ -193,7 +197,7 @@ import { Image } from "astro:assets";
         applyTheme(savedTheme);
       } else {
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
+          "(prefers-color-scheme: light)",
         ).matches;
         applyTheme(prefersDark ? "dark" : "light");
       }
