@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 
 <footer class="bg-gradient-to-b from-cyan-950 to-slate-900 text-white py-12">
   <div class="container mx-auto px-4 text-center">
-    <a href={import.meta.env.BASE_URL} class="block w-full"> </a>
     <div class="flex flex-col items-center justify-center">
       <Image
         src="/logo.svg"
@@ -31,7 +30,7 @@ import { Image } from "astro:assets";
   </p>
   <div class="mt-6 text-sm md:text-base flex flex-col items-center">
     <span>
-      Made with <span aria-label="love">❤️</span> by
+      Made with <span aria-hidden="true">❤️</span> by
       <a
         href="https://www.linkedin.com/in/rubenafonsodev/"
         target="_blank"

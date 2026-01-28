@@ -8,6 +8,8 @@ import { Image } from "astro:assets";
 >
   <nav
     class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-3"
+    role="navigation"
+    aria-label="Navegación principal"
   >
     <!-- Logo a la izquierda -->
     <div class="flex-1 flex justify-center md:justify-start w-full">
@@ -122,6 +124,7 @@ import { Image } from "astro:assets";
         role="button"
         class="btn btn-ghost p-2"
         aria-label="Abrir menú de navegación"
+        aria-haspopup="true"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
