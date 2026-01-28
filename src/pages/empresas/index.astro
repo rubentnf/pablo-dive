@@ -1,0 +1,479 @@
+---
+import SocialLink from "../../components/SocialLink.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getBusiness } from "./business.api";
+
+const business = await getBusiness();
+const buceo = business.filter((b) => b.type === "buceo");
+const avistamiento = business.filter((b) => b.type === "avistamiento");
+const aventura = business.filter((b) => b.type === "aventura");
+---
+
+<Layout
+  title="Empresas | Pablo Dive"
+  description="Empresas que colaboran activamente con Pablo Dive en proyectos de conservación y sostenibilidad."
+>
+  <div class="min-h-screen">
+    <!-- Header -->
+    <div class="py-20 px-6 text-center border-b border-slate-200">
+      <p class="text-sm uppercase tracking-widest text-slate-500 mb-4">
+        Servicios y proyectos ambientales comprometidos con la sostenibilidad.
+      </p>
+      <h1
+        class="text-3xl md:text-5xl font-light mb-6 text-slate-900 leading-tight"
+      >
+        Empresas
+      </h1>
+      <div class="space-y-4 mt-10">
+        <p
+          class="text-slate-700 text-justify text-base md:text-lg max-w-2xl mx-auto"
+        >
+          Uno de mis objetivos siempre ha sido <strong
+            >promover empresas locales y comprometidas con los animales y el
+            medio natural</strong
+          >. Trabajar con animales rescatados fue una de mis primeras
+          experiencias laborales: fauna exótica que la gente tenía en sus casas
+          o que había sido confiscada del tráfico ilegal. Esto marcó
+          profundamente el trabajo que realizo hoy en día, y por eso nunca me
+          atrevo a recomendar empresas que no conozca personalmente.
+        </p>
+        <p
+          class="text-slate-700 text-justify text-base md:text-lg max-w-2xl mx-auto"
+        >
+          Este pensamiento lo comparten muchísimas de las personas que me
+          siguen, y me atrevería a decir que es una de las preguntas que más
+          suelo recibir. Por eso les dejo aquí mi pequeña selección de empresas
+          en las que sé que no van a tener ningún problema. Además de cumplir
+          con todos los requisitos legales para desarrollar su actividad,ya que,
+          desgraciadamente, en Canarias hay mucho pirata. Seguiré añadiendo
+          empresas a medida que vaya trabajando con ellos.
+        </p>
+      </div>
+      <!-- Variantes de cards: Minimalista, fondo suave, icono grande, hover color, ficha lateral -->
+      <div class="mt-16">
+        <!-- Variante Creativa 7: Card con layout tipo ficha de perfil -->
+        <!--   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {
+            buceo.slice(0, 2).map((business) => (
+              <div class="bg-white p-10 rounded-3xl shadow-2xl flex flex-row items-center w-full max-w-xl mx-auto">
+                <img
+                  src={business.image.url}
+                  alt={business.title}
+                  class="w-24 h-24 object-cover rounded-full mr-8 border-4 border-blue-300"
+                />
+                <div class="flex-1 flex flex-col items-start">
+                  <span class="font-extrabold text-2xl text-slate-900 mb-2">
+                    {business.title}
+                  </span>
+                  <div class="flex gap-4 text-lg">
+                    <SocialLink
+                      href={business.webURL}
+                      icon="web"
+                      label={`Visitar web de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.facebookURL}
+                      icon="facebook"
+                      label={`Facebook de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.twitterURL}
+                      icon="x"
+                      label={`Twitter/X de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.instagramURL}
+                      icon="instagram"
+                      label={`Instagram de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.tiktokURL}
+                      icon="tiktok"
+                      label={`TikTok de ${business.title}`}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div> -->
+
+        <!-- Variante 22: Card grande con imagen lateral y contenido a la derecha -->
+        <!--  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {
+            buceo.slice(0, 2).map((business) => (
+              <div class="bg-white p-10 rounded-3xl shadow-2xl flex flex-row items-center w-full max-w-2xl mx-auto">
+                <img
+                  src={business.image.url}
+                  alt={business.title}
+                  class="w-40 h-40 object-cover rounded-2xl mr-8"
+                />
+                <div class="flex-1 flex flex-col items-start">
+                  <span class="font-extrabold text-2xl text-slate-900 mb-4">
+                    {business.title}
+                  </span>
+                  <div class="flex gap-4 text-xl">
+                    <SocialLink
+                      href={business.webURL}
+                      icon="web"
+                      label={`Visitar web de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.facebookURL}
+                      icon="facebook"
+                      label={`Facebook de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.twitterURL}
+                      icon="x"
+                      label={`Twitter/X de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.instagramURL}
+                      icon="instagram"
+                      label={`Instagram de ${business.title}`}
+                    />
+                    <SocialLink
+                      href={business.tiktokURL}
+                      icon="tiktok"
+                      label={`TikTok de ${business.title}`}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Empresas de Buceo -->
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <h2 class="text-2xl md:text-4xl font-bold text-cyan-700 mb-8 text-left">
+        Empresas de Buceo
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {
+          buceo.map((business) => (
+            <div class="bg-white p-10 rounded-3xl shadow-2xl flex flex-row items-center w-full max-w-xl mx-auto">
+              <img
+                src={business.image.url}
+                alt={business.title}
+                class="w-24 h-24 object-cover rounded-full mr-8 border-4 border-blue-300"
+              />
+              <div class="flex-1 flex flex-col items-start">
+                <span class="font-extrabold text-2xl text-slate-900 mb-2">
+                  {business.title}
+                </span>
+                <div class="flex gap-4 text-lg">
+                  <SocialLink
+                    href={business.webURL}
+                    icon="web"
+                    label={`Visitar web de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.facebookURL}
+                    icon="facebook"
+                    label={`Facebook de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.twitterURL}
+                    icon="x"
+                    label={`Twitter/X de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.instagramURL}
+                    icon="instagram"
+                    label={`Instagram de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.tiktokURL}
+                    icon="tiktok"
+                    label={`TikTok de ${business.title}`}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Empresas de Buceo -->
+    <!-- <div class="max-w-7xl mx-auto px-6 py-20">
+      <h2 class="text-2xl md:text-4xl font-bold text-cyan-700 mb-8 text-center">
+        Empresas de Buceo
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          buceo.map((business) => (
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+              <div class="relative aspect-video overflow-hidden">
+                <img
+                  src={business.image.url}
+                  alt={business.title}
+                  class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <h2 class="text-2xl md:text-4xl font-bold text-blue-800 mb-3 group-hover:text-cyan-600 transition-colors">
+                  {business.title}
+                </h2>
+                <div class="flex gap-3 mt-auto pt-4 border-t border-slate-100">
+                  <SocialLink
+                    href={business.webURL}
+                    icon="web"
+                    label={`Visitar web de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.facebookURL}
+                    icon="facebook"
+                    label={`Facebook de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.twitterURL}
+                    icon="x"
+                    label={`Twitter/X de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.instagramURL}
+                    icon="instagram"
+                    label={`Instagram de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.tiktokURL}
+                    icon="tiktok"
+                    label={`TikTok de ${business.title}`}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div> -->
+
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-cyan-700 mb-8 text-left"
+      >
+        Empresas de Avistamiento
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {
+          avistamiento.map((business) => (
+            <div class="bg-white p-10 rounded-3xl shadow-2xl flex flex-row items-center w-full max-w-xl mx-auto">
+              <img
+                src={business.image.url}
+                alt={business.title}
+                class="w-24 h-24 object-cover rounded-full mr-8 border-4 border-blue-300"
+              />
+              <div class="flex-1 flex flex-col items-start">
+                <span class="font-extrabold text-2xl text-slate-900 mb-2">
+                  {business.title}
+                </span>
+                <div class="flex gap-4 text-lg">
+                  <SocialLink
+                    href={business.webURL}
+                    icon="web"
+                    label={`Visitar web de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.facebookURL}
+                    icon="facebook"
+                    label={`Facebook de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.twitterURL}
+                    icon="x"
+                    label={`Twitter/X de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.instagramURL}
+                    icon="instagram"
+                    label={`Instagram de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.tiktokURL}
+                    icon="tiktok"
+                    label={`TikTok de ${business.title}`}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Empresas de Avistamiento -->
+    <!-- <div class="max-w-7xl mx-auto px-6 py-20">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-purple-700 mb-8 text-center"
+      >
+        Empresas de Avistamiento
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          avistamiento.map((business) => (
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+              <div class="relative aspect-video overflow-hidden">
+                <img
+                  src={business.image.url}
+                  alt={business.title}
+                  class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <h2 class="text-2xl md:text-4xl font-bold text-blue-800 mb-3 group-hover:text-cyan-600 transition-colors">
+                  {business.title}
+                </h2>
+                <div class="flex gap-3 mt-auto pt-4 border-t border-slate-100">
+                  <SocialLink
+                    href={business.webURL}
+                    icon="web"
+                    label={`Visitar web de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.facebookURL}
+                    icon="facebook"
+                    label={`Facebook de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.twitterURL}
+                    icon="x"
+                    label={`Twitter/X de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.instagramURL}
+                    icon="instagram"
+                    label={`Instagram de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.tiktokURL}
+                    icon="tiktok"
+                    label={`TikTok de ${business.title}`}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div> -->
+
+    <!-- Empresas de Aventura -->
+    <div class="max-w-7xl mx-auto px-6 py-1">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-cyan-700 mb-8 text-left"
+      >
+        Empresas de Aventura
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {
+          aventura.map((business) => (
+            <div class="bg-white p-10 rounded-3xl shadow-2xl flex flex-row items-center w-full max-w-xl mx-auto">
+              <img
+                src={business.image.url}
+                alt={business.title}
+                class="w-24 h-24 object-cover rounded-full mr-8 border-4 border-blue-300"
+              />
+              <div class="flex-1 flex flex-col items-start">
+                <span class="font-extrabold text-2xl text-slate-900 mb-2">
+                  {business.title}
+                </span>
+                <div class="flex gap-4 text-lg">
+                  <SocialLink
+                    href={business.webURL}
+                    icon="web"
+                    label={`Visitar web de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.facebookURL}
+                    icon="facebook"
+                    label={`Facebook de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.twitterURL}
+                    icon="x"
+                    label={`Twitter/X de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.instagramURL}
+                    icon="instagram"
+                    label={`Instagram de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.tiktokURL}
+                    icon="tiktok"
+                    label={`TikTok de ${business.title}`}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          aventura.map((business) => (
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+              <div class="relative aspect-video overflow-hidden">
+                <img
+                  src={business.image.url}
+                  alt={business.title}
+                  class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <h2 class="text-2xl md:text-4xl font-bold text-blue-800 mb-3 group-hover:text-cyan-600 transition-colors">
+                  {business.title}
+                </h2>
+                <div class="flex gap-3 mt-auto pt-4 border-t border-slate-100">
+                  <SocialLink
+                    href={business.webURL}
+                    icon="web"
+                    label={`Visitar web de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.facebookURL}
+                    icon="facebook"
+                    label={`Facebook de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.twitterURL}
+                    icon="x"
+                    label={`Twitter/X de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.instagramURL}
+                    icon="instagram"
+                    label={`Instagram de ${business.title}`}
+                  />
+                  <SocialLink
+                    href={business.tiktokURL}
+                    icon="tiktok"
+                    label={`TikTok de ${business.title}`}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div> -->
+    </div>
+    <div class="space-y-4 mt-10 mb-20">
+      <p
+        class="text-slate-700 text-justify text-base md:text-lg max-w-2xl mx-auto mb-12"
+      >
+        En caso de que detectes por parte de alguna de estas empresas actos
+        irresponsables como: dar de comer a la fauna, agarrar tortugas, molestar
+        a los animales o cualquier otra actitud que perjudique al medio natural
+        y sus habitantes. Házmelo saber para estar al tanto y en ese supuesto
+        quitarlas.
+      </p>
+    </div>
+  </div>
+</Layout>
