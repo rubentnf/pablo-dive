@@ -63,7 +63,7 @@ import Layout from "../../layouts/Layout.astro";
           </p>
         </div>
         <div
-          class="w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
+          class="emoji-desktop w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
         >
           📄
         </div>
@@ -95,7 +95,7 @@ import Layout from "../../layouts/Layout.astro";
           </p>
         </div>
         <div
-          class="w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
+          class="emoji-desktop w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
         >
           🛥️
         </div>
@@ -112,10 +112,11 @@ import Layout from "../../layouts/Layout.astro";
           </h2>
           <p class="mb-2 text-slate-900">
             Solo recomiendo dos empresas concretas, en las que confío plenamente
-            porque <strong>respetan las distancias, apagan motores cuando toca, no
-            acorralan a los animales, cumplen los permisos y entienden que los
-            cetáceos no están ahí para entretener turistas</strong>, sino que son fauna
-            salvaje con necesidades reales.
+            porque <strong
+              >respetan las distancias, apagan motores cuando toca, no acorralan
+              a los animales, cumplen los permisos y entienden que los cetáceos
+              no están ahí para entretener turistas</strong
+            >, sino que son fauna salvaje con necesidades reales.
           </p>
           <p class="mb-2 text-slate-900">
             El resto, si no lo conozco de primera mano, prefiero no
@@ -123,7 +124,7 @@ import Layout from "../../layouts/Layout.astro";
           </p>
         </div>
         <div
-          class="w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
+          class="emoji-desktop w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
         >
           ✅
         </div>
@@ -137,21 +138,23 @@ import Layout from "../../layouts/Layout.astro";
         >
           <h2 class="font-bold text-xl text-blue-800 mb-2">Bandera Azul</h2>
           <p class="mb-2 text-slate-900">
-            En Canarias existe un distintivo llamado <strong>“Bandera Azul de
-            Avistamiento de Cetáceos”</strong>, que deberían tener todas las
-            embarcaciones que operan de forma legal y responsable. Este sello
-            indica que la empresa cumple la normativa, tiene permiso oficial,
-            sigue el protocolo de distancias y tiempos y respeta el
-            comportamiento de los animales.
+            En Canarias existe un distintivo llamado <strong
+              >“Bandera Azul de Avistamiento de Cetáceos”</strong
+            >, que deberían tener todas las embarcaciones que operan de forma
+            legal y responsable. Este sello indica que la empresa cumple la
+            normativa, tiene permiso oficial, sigue el protocolo de distancias y
+            tiempos y respeta el comportamiento de los animales.
           </p>
           <p class="mb-2 text-slate-900">
             Sin embargo, muchas embarcaciones no la tienen, no tienen licencia o
             ignoran el protocolo. Si una embarcación no tiene la bandera visible
-            y no aparece en el listado oficial, <strong>no deberías subirte</strong>.
+            y no aparece en el listado oficial, <strong
+              >no deberías subirte</strong
+            >.
           </p>
         </div>
         <div
-          class="w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
+          class="emoji-desktop w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
         >
           🐋
         </div>
@@ -174,17 +177,26 @@ import Layout from "../../layouts/Layout.astro";
             están exhaustos, condicionados y alterados.
           </p>
           <p class="mb-2 text-slate-900">
-            Es urgente <strong>limitar el número de embarcaciones, establecer días de
-            descanso para los animales, aumentar controles y priorizar el
-            bienestar animal</strong> por encima del beneficio económico.
+            Es urgente <strong
+              >limitar el número de embarcaciones, establecer días de descanso
+              para los animales, aumentar controles y priorizar el bienestar
+              animal</strong
+            > por encima del beneficio económico.
           </p>
         </div>
         <div
-          class="w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
+          class="emoji-desktop w-40 h-40 flex items-center justify-center rounded-2xl text-6xl"
         >
           ⚠️
         </div>
       </div>
     </div>
   </div>
+  <style>
+    @media (max-width: 1023px) {
+      .emoji-desktop {
+        display: none !important;
+      }
+    }
+  </style>
 </Layout>
