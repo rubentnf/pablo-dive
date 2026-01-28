@@ -129,7 +129,7 @@ const canonicalURL = canonical || siteURL;
       Saltar al contenido principal
     </a>
     <SpeedInsights />
-    <Header transition:persist />
+    <Header transition:persist currentPath={Astro.url.pathname} />
 
     <main id="main-content" role="main" class="flex-1">
       <slot />
