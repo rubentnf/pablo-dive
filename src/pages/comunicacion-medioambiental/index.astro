@@ -9,7 +9,7 @@ import Layout from "../../layouts/Layout.astro";
   description="Impulsa la visibilidad de tu proyecto con Pablo Dive"
 >
   <section
-    class="min-h-screen flex items-center justify-center bg-white px-6 py-12"
+    class="min-h-150 flex items-center justify-center px-4 py-4 md:py-8"
   >
     <div class="max-w-4xl mx-auto text-center fade-in">
       <p class="text-sm uppercase tracking-widest text-slate-500 mb-4">
@@ -37,33 +37,18 @@ import Layout from "../../layouts/Layout.astro";
         Por eso he creado este espacio: para que cualquier persona, entidad o
         proyecto pueda contactarme directamente.
       </p>
-
-      <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="#mission"
-          class="px-8 py-4 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors text-lg font-medium"
-        >
-          Nuestra Misión
-        </a>
-        <a
-          href="#impact"
-          class="px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-full hover:bg-slate-50 transition-colors text-lg font-medium"
-        >
-          Ver Impacto
-        </a>
-      </div> -->
     </div>
   </section>
 
   <!-- Feature 1 - Large Image Left -->
-  <section class="py-32 bg-slate-50">
+  <section class="py-32">
     <div class="container mx-auto px-6">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div
           class="aspect-[4/3] bg-gradient-to-br from-cyan-100 to-blue-200 rounded-3xl fade-in-left"
         >
           <Image
-            src="/creacion-contenido.webp"
+            src="/comunicacionAmbiental1.webp"
             alt="Pablo Dive dando una conferencia sobre biología marina"
             width={800}
             height={600}
@@ -74,25 +59,25 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <div class="fade-in-right">
           <h2
-            class="text-2xl md:text-4xl md:text-left text-center font-light mb-8 text-slate-900"
+            class="text-2xl md:text-4xl md:text-left text-center font-light mb-8 text-blue-800"
           >
             Creación de contenido profesional
           </h2>
           <div class="space-y-6 text-lg text-slate-600">
             <div class="flex items-start gap-4">
-              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
               <p class="text-base md:text-lg">
                 Grabación en campo y laboratorio
               </p>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
               <p class="text-base md:text-lg">Fotografía y guionización</p>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
               <p class="text-base md:text-lg">
                 Edición de vídeos y diseño de piezas visuales
@@ -105,7 +90,7 @@ import Layout from "../../layouts/Layout.astro";
   </section>
 
   <!-- Stats Section - Clean -->
-  <section class="py-16 bg-white">
+  <section class="py-16">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
         <h2
@@ -138,10 +123,10 @@ import Layout from "../../layouts/Layout.astro";
                 class="text-center fade-in"
                 style={`animation-delay: ${i * 0.1}s`}
               >
-                <div class="text-6xl sm:text-7xl font-light text-blue-800 mb-4">
+                <div class="text-6xl sm:text-7xl font-light text-blue-900 mb-4">
                   <span class="text-3xl md:text-5xl">{stat.number}</span>
                 </div>
-                <div class="text-xl font-medium text-blue-800 mb-2">
+                <div class="text-xl font-medium text-slate-900 mb-2">
                   <span class="text-base md:text-lg">{stat.label}</span>
                 </div>
                 <div class="text-base md:text-lg text-slate-700">
@@ -156,7 +141,7 @@ import Layout from "../../layouts/Layout.astro";
   </section>
 
   <!-- Feature 2 - Large Image Right -->
-  <section class="py-16 bg-slate-50">
+  <section class="py-16">
     <div class="container mx-auto px-6">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div class="order-2 lg:order-1 fade-in-left">
@@ -168,43 +153,34 @@ import Layout from "../../layouts/Layout.astro";
           <p class="text-xl text-slate-600 mb-8 leading-relaxed">
             Es un enfoque de conservación que puedes aplicar en cualquier lugar
           </p>
-          <div class="space-y-4">
-            <div class="flex items-center gap-3">
-              <div
-                class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center text-white text-sm"
-              >
-                ✓
+
+          <div class="space-y-6 text-lg text-slate-600">
+            <div class="flex items-start gap-4">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
-              <span class="text-lg text-slate-700"
-                >Traducción de información técnica a un lenguaje cercano</span
-              >
+              <p class="text-base md:text-lg">
+                Traducción de información técnica a un lenguaje cercano
+              </p>
             </div>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-6 h-6 rounded-full bg-cyan-700 flex items-center justify-center text-white text-sm"
-              >
-                ✓
+            <div class="flex items-start gap-4">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
-              <span class="text-lg text-slate-700"
-                >Enseñar la ciencia de una manera didáctica</span
-              >
+              <p class="text-base md:text-lg">
+                Enseñar la ciencia de una manera didáctica
+              </p>
             </div>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center text-white text-sm"
-              >
-                ✓
+            <div class="flex items-start gap-4">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
-              <span class="text-lg text-slate-700">Divulgación digital</span>
+              <p class="text-base md:text-lg">Divulgación digital</p>
             </div>
           </div>
         </div>
         <div
           class="order-1 lg:order-2 aspect-[4/3] bg-gradient-to-br from-blue-100 to-cyan-200 rounded-3xl fade-in-right"
         >
-          <!-- class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" -->
           <Image
-            src="/conferencia.webp"
+            src="/comunicacionAmbiental2.webp"
             alt="Pablo Dive dando una conferencia sobre biología marina"
             width={800}
             height={600}
@@ -217,62 +193,15 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- Benefits Grid -->
-  <section id="mission" class="py-32 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-x-16 gap-y-20">
-          {
-            [
-              {
-                title: "📱 Gestión completa de redes sociales",
-                desc: "Creación, optimización y gestión de cuentas para que tu proyecto tenga presencia digital profesional desde el primer día.",
-              },
-              {
-                title: "📝 Estrategia de contenido",
-                desc: "Planificación y desarrollo de contenidos adaptados a tus objetivos: visibilidad, educación ambiental, captación de apoyo o difusión de resultados.",
-              },
-              {
-                title: "🧑🏻‍💻 Creación de contenido profesional",
-                desc: "Grabación en campo y laboratorio, fotografía, guionización, edición de vídeo y diseño de piezas visuales para comunicar tu trabajo de forma atractiva y rigurosa.",
-              },
-              {
-                title: "📢 Divulgación y comunicación científica",
-                desc: "Traducción de información técnica a un lenguaje cercano, sin perder precisión, para que tu proyecto conecte con la ciudadanía.",
-              },
-              /*  {
-                title: "♻️ Contaminación",
-                desc: "Lucha contra plásticos, microplásticos y otras formas de contaminación que afectan a la vida marina.",
-              },
-              {
-                title: "🎣 Pesca Ilegal",
-                desc: "Denuncia de prácticas ilegales y promoción de una gestión pesquera sostenible para proteger los ecosistemas.",
-              }, */
-            ].map((benefit, i) => (
-              <div class="fade-in" style={`animation-delay: ${i * 0.05}s`}>
-                <h3 class="text-2xl font-medium text-slate-900 mb-3">
-                  {benefit.title}
-                </h3>
-                <p class="text-lg text-slate-600 leading-relaxed">
-                  {benefit.desc}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Feature 1 - Large Image Left -->
-  <section class="py-32 bg-slate-50">
+  <section class="py-32">
     <div class="container mx-auto px-6">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div
           class="aspect-[4/3] bg-gradient-to-br from-cyan-100 to-blue-200 rounded-3xl fade-in-left"
         >
           <Image
-            src="/gestion-redes.webp"
+            src="/comunicacionAmbiental3.webp"
             alt="Pablo Dive dando una conferencia sobre biología marina"
             width={800}
             height={600}
@@ -283,27 +212,27 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <div class="fade-in-right">
           <h2
-            class="text-2xl md:text-4xl md:text-left text-center font-light mb-8 text-slate-900"
+            class="text-2xl md:text-4xl md:text-left text-center font-light mb-8 text-blue-800"
           >
             Estrategia de contenido
           </h2>
           <div class="space-y-4 text-lg text-slate-600">
             <div class="flex items-start gap-4">
-              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
               <p class="text-base md:text-lg">
                 Planificación y desarrollo de contenido
               </p>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
               <p class="text-base md:text-lg">
                 Divulgación accesible y efectiva
               </p>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0">
+              <div class="w-2 h-2 bg-cyan-700 rounded-full mt-3 flex-shrink-0">
               </div>
               <p class="text-base md:text-lg">
                 Captación de apoyo o difusión de resultados
@@ -316,19 +245,11 @@ import Layout from "../../layouts/Layout.astro";
   </section>
 
   <!-- Mission Statement -->
-  <section class="py-16 bg-white">
+  <section class="py-16 mb-15 mt-15">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto text-center fade-in">
-        <!-- <div class="inline-block px-6 py-3 bg-cyan-50 rounded-full mb-8">
-          <p
-            class="text-sm uppercase tracking-widest text-cyan-700 font-medium"
-          >
-            Organización de Beneficio Público
-          </p>
-        </div> -->
-
         <h2
-          class="text-2xl md:text-4xl font-light mb-4 text-slate-900 leading-tight"
+          class="text-2xl md:text-4xl font-light mb-4 text-blue-800 leading-tight"
         >
           ¿Por qué contar conmigo?
         </h2>
@@ -346,69 +267,4 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </div>
   </section>
-
-  <!-- Specs Overview -->
-  <section id="impact" class="py-16 bg-slate-900 text-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl sm:text-5xl font-light text-center mb-8 fade-in">
-          <span class="text-2xl md:text-4xl"
-            >¿Tienes un proyecto y quieres que conecte con el público?</span
-          >
-        </h2>
-
-        <p class="text-xl text-slate-600 leading-relaxed">
-          <span class="text-base md:text-lg">
-            Contáctame para que tu proyecto ambiental o de investigación tenga
-            la visibilidad que merece. Me encantará colaborar contigo.
-          </span>
-        </p>
-
-        <!-- <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {
-            [
-              { label: "Áreas Protegidas", value: "12" },
-              { label: "Especies Salvadas", value: "45" },
-              { label: "Voluntarios", value: "200+" },
-              { label: "Años Activo", value: "5+" },
-            ].map((spec, i) => (
-              <div
-                class="text-center fade-in"
-                style={`animation-delay: ${i * 0.05}s`}
-              >
-                <div class="text-5xl font-light mb-3">{spec.value}</div>
-                <div class="text-sm uppercase tracking-wider text-slate-400">
-                  {spec.label}
-                </div>
-              </div>
-            ))
-          }
-        </div> -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <!-- <section class="py-32 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-3xl mx-auto text-center fade-in">
-        <h2
-          class="italic text-5xl sm:text-6xl md:text-7xl font-light mb-12 text-slate-900"
-        >
-          "Los charcos no se tocan"
-        </h2>
-
-        <p class="text-xl sm:text-2xl text-slate-600 mb-12 leading-relaxed">
-          Cada acción cuenta en la protección de nuestros océanos
-        </p>
-
-        <a
-          href="/about"
-          class="inline-block px-12 py-5 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors text-lg font-medium"
-        >
-          Conoce Más
-        </a>
-      </div>
-    </div>
-  </section> -->
 </Layout>

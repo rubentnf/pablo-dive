@@ -1,59 +1,156 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Biología Marina | Pablo Dive"
-  description="Descubre dónde puedes estudiar sobre biología marina con la experiencia de Pablo Dive"
+  title="Biología Marina | Variante 5"
+  description="Storyline vertical limpio, con bloques alternos y acentos suaves"
 >
-  <section
-    class="min-h-screen flex items-center justify-center bg-white px-6 py-12"
-  >
-    <div class="max-w-4xl mx-auto text-center fade-in">
-      <p class="text-sm uppercase tracking-widest text-slate-500 mb-4">
+  <section class="min-h-screen px-6 py-16 flex flex-col items-center">
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <p class="text-xs tracking-[0.35em] uppercase text-slate-400 mb-3">
         ¿Dónde puedes adentrarte y estudiar sobre Biología Marina?
       </p>
-      <h1
-        class="text-3xl md:text-5xl font-light mb-6 text-slate-900 leading-tight"
-      >
+      <h1 class="text-4xl md:text-5xl font-semibold text-slate-900">
         Biología Marina
       </h1>
+    </div>
 
-      <p
-        class="text-base md:text-lg text-center text-slate-600 font-light max-w-3xl mx-auto mb-4 leading-relaxed"
+    <div class="relative max-w-3xl w-full">
+      <div
+        class="absolute left-[18px] md:left-1/2 md:-translate-x-px top-10 bottom-10 w-1 bg-slate-200 pointer-events-none"
       >
-        Esta es, sin duda, una de las preguntas que más se repiten. Realicé el
-        Grado en Biología en la ULL (Universidad de La Laguna), y
-        posteriormente, el Máster en Biología Marina: Biodiversidad y
-        Conservación, también en la ULL. En España, actualmente sólo existen dos
-        opciones para obtener el título de biólogo marino como tal: en Galicia y
-        Tenerife
-      </p>
+      </div>
 
-      <p
-        class="text-base md:text-lg text-center text-slate-600 font-light max-w-3xl mx-auto mb-4 leading-relaxed"
-      >
-        Como soy de Tenerife y vivo aquí, evidentemente quería estudiarlo en la
-        isla, pero me desmotivaba bastante la idea de volver a la ULL. En este
-        <a href="https://www.ull.es/masteres/biologia-marina-biodiversidad/"
-          >enlace</a
-        >, encontrarás la web del máster, donde podrás ver los requisitos de
-        acceso y empezar a prepararte. Ten en cuenta que, cuanto más puntos
-        tengas, más posibilidades tendrás de entrar.
-      </p>
+      <div class="space-y-20">
+        {/* Paso 1 */}
+        <article
+          class="relative flex flex-col md:flex-row md:items-start gap-6"
+        >
+          <div
+            class="md:flex-1 bg-white rounded-3xl shadow-sm border border-slate-100 p-6 md:p-7 ml-2 md:ml-0"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-60 h-60 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-100"
+              >
+                <Image
+                  src="/biologiamarina1.webp"
+                  alt="Imagen de una foca en libertad"
+                  width={800}
+                  height={600}
+                  format="webp"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <h2
+                  class="text-2xl text-center font-semibold text-slate-900 mb-4"
+                >
+                  Formación y opciones en España
+                </h2>
+                <p class="text-m leading-relaxed text-slate-700">
+                  Esta es, sin duda, una de las preguntas que más se repiten.
+                  Realicé el Grado en Biología en la ULL (Universidad de La
+                  Laguna), y posteriormente, el Máster en Biología Marina:
+                  Biodiversidad y Conservación, también en la ULL. En España,
+                  actualmente sólo existen dos opciones para obtener el título
+                  de biólogo marino como tal: en Galicia y Tenerife.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
 
-      <p
-        class="text-base md:text-lg text-center text-slate-600 font-light max-w-3xl mx-auto mb-4 leading-relaxed"
-      >
-        Considero que es un máster muy bueno, tanto por el nivel como por el
-        profesorado que lo imparte. Mi intención desde el principio era irme de
-        Canarias para hacer las prácticas y el TFM, y así fue: terminé en el
-        lugar que más deseaba, Baja California Sur, México. Contacté con el
-        doctor Felipe Galván Magaña, quien me aceptó para una estancia en el
-        CICIMAR, en su laboratorio de Ecología de Tiburones y Rayas. Allí
-        realicé mis prácticas y mi TFM, que posteriormente presenté al regresar
-        a Tenerife.
-      </p>
+        {/* Paso 2 */}
+        <article
+          class="relative flex flex-col md:flex-row md:items-start gap-6"
+        >
+          <div
+            class="md:flex-1 bg-slate-900 text-slate-50 rounded-3xl shadow-sm border border-slate-800 p-6 md:p-7 ml-2 md:ml-0"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-60 h-60 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-800 border border-slate-700/70"
+              >
+                <Image
+                  src="/biologiamarina2.webp"
+                  alt="Imagen de un banco de tiburones"
+                  width={800}
+                  height={600}
+                  format="webp"
+                  class="rounded-3xl object-cover w-full h-full"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
+              <div>
+                <h2 class="text-2xl text-center font-semibold mb-4">
+                  Mi experiencia y el máster
+                </h2>
+                <p class="text-m leading-relaxed text-slate-100/90">
+                  Como soy de Tenerife y vivo aquí, evidentemente quería
+                  estudiarlo en la isla, pero me desmotivaba bastante la idea de
+                  volver a la ULL. En este<a
+                    href="https://www.ull.es/masteres/biologia-marina-biodiversidad/"
+                    class="underline decoration-sky-400 text-sky-300 hover:text-sky-200 ml-1"
+                    target="_blank"
+                    rel="noreferrer">enlace</a
+                  >, encontrarás la web del máster, donde podrás ver los
+                  requisitos de acceso y empezar a prepararte. Ten en cuenta
+                  que, cuanto más puntos tengas, más posibilidades tendrás de
+                  entrar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {/* Paso 3 */}
+        <article
+          class="relative flex flex-col md:flex-row md:items-start gap-6"
+        >
+          <div
+            class="md:flex-1 bg-white rounded-3xl shadow-sm border border-slate-100 p-6 md:p-7 ml-2 md:ml-0"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-60 h-60 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-100"
+              >
+                <Image
+                  src="/biologiamarina3.webp"
+                  alt="Imagen de un pez en el fondo marino"
+                  width={800}
+                  height={600}
+                  format="webp"
+                  class="rounded-3xl object-cover w-full h-full"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
+              <div>
+                <h2
+                  class="text-2xl text-center font-semibold text-slate-900 mb-4"
+                >
+                  Prácticas y TFM internacionales
+                </h2>
+                <p class="text-m leading-relaxed text-slate-700">
+                  Considero que es un máster muy bueno, tanto por el nivel como
+                  por el profesorado que lo imparte. Mi intención desde el
+                  principio era irme de Canarias para hacer las prácticas y el
+                  TFM, y así fue: terminé en el lugar que más deseaba, Baja
+                  California Sur, México. Contacté con el doctor Felipe Galván
+                  Magaña, quien me aceptó para una estancia en el CICIMAR, en su
+                  laboratorio de Ecología de Tiburones y Rayas. Allí realicé mis
+                  prácticas y mi TFM, que posteriormente presenté al regresar a
+                  Tenerife.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </Layout>

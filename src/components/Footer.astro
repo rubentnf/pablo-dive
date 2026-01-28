@@ -1,21 +1,43 @@
+---
+import { Image } from "astro:assets";
+---
+
 <footer class="bg-gradient-to-b from-cyan-950 to-slate-900 text-white py-12">
   <div class="container mx-auto px-4 text-center">
-    <p class="text-lg md:text-xl text-slate-700">Pablo Dive</p>
-    <p class="text-sm md:text-base opacity-50 mt-2">
-      Biólogo Marino • Divulgador Ambiental • Tenerife, España
-    </p>
-    <div
-      class="mt-6 text-sm md:text-base text-slate-700 flex flex-col items-center"
-    >
-      <span>
-        Made with <span aria-label="love">❤️</span> by
-        <a
-          href="https://www.linkedin.com/in/rubenafonsodev/"
-          target="_blank"
-          rel="noopener"
-          class="underline hover:text-cyan-700">Rubén Afonso</a
-        >
-      </span>
+    <a href={import.meta.env.BASE_URL} class="block w-full"> </a>
+    <div class="flex flex-col items-center justify-center">
+      <Image
+        src="/logo.svg"
+        alt="Icono Pablo Dive"
+        class="logo-white mx-auto h-24 w-auto mb-2"
+        width={96}
+        height={96}
+        format="svg"
+        loading="lazy"
+      />
+      <span class="block text-2xl font-bold tracking-wide text-white"
+        >PABLO DIVE</span
+      >
     </div>
+
+    <style>
+      .logo-white {
+        filter: invert(1) brightness(2);
+      }
+    </style>
+  </div>
+  <p class="text-sm mt-5 text-center md:text-base opacity-50 mt-2">
+    Biólogo Marino • Divulgador Ambiental • Tenerife, España
+  </p>
+  <div class="mt-6 text-sm md:text-base flex flex-col items-center">
+    <span>
+      Made with <span aria-label="love">❤️</span> by
+      <a
+        href="https://www.linkedin.com/in/rubenafonsodev/"
+        target="_blank"
+        rel="noopener"
+        class="underline hover:text-pink-700">Rubén Afonso</a
+      >
+    </span>
   </div>
 </footer>

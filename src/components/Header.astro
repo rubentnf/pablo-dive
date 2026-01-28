@@ -1,192 +1,81 @@
-<header role="banner" class="sticky top-0 z-50">
-  <div class="navbar bg-base-100 shadow-sm">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <div
-          tabindex="0"
-          role="button"
-          class="btn btn-ghost lg:hidden"
-          aria-label="Abrir menú de navegación"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+---
+import { Image } from "astro:assets";
+---
+
+<header
+  role="banner"
+  class="sticky top-0 z-50 bg-base-100/80 backdrop-blur border-b border-slate-100"
+>
+  <nav
+    class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-3"
+  >
+    <!-- Logo a la izquierda -->
+    <div class="flex-1 flex justify-center md:justify-start w-full">
+      <a href={import.meta.env.BASE_URL}>
+        <div class="flex flex-col items-center justify-center">
+          <Image
+            src="/logo.svg"
+            alt="Logo Pablo Dive"
+            class="h-[150px] w-[200px] md:h-[100px] md:w-[250px]"
+            width={150}
+            height={150}
+            loading="lazy"
+            format="svg"
+          />
+          <span class="block text-2xl font-bold tracking-wide text-black"
+            >PABLO DIVE</span
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16"></path>
-          </svg>
         </div>
-        <ul
-          tabindex="-1"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+      </a>
+    </div>
+
+    <!-- Menú desktop centrado -->
+    <ul
+      class="hidden lg:flex gap-6 mx-auto text-base font-medium text-slate-700"
+    >
+      <li>
+        <a
+          href={import.meta.env.BASE_URL}
+          class="hover:text-blue-700 transition">Inicio</a
         >
-          <li><a href={import.meta.env.BASE_URL}>Inicio</a></li>
-          <li>
-            <details>
-              <summary>Variantes Home</summary>
-              <ul class="p-2">
-                <li><a href="/index-variant2">Home Variante 2</a></li>
-                <li><a href="/index-variant3">Home Variante 3</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a href={`${import.meta.env.BASE_URL}comunicacion-medioambiental`}
-              >Comunicación Medioambiental</a
-            >
-          </li>
-          <li>
-            <a href={`${import.meta.env.BASE_URL}biologia-marina`}
-              >Biología Marina</a
-            >
-          </li>
-          <li>
-            <details>
-              <summary>Diseños Sobre mí</summary>
-              <ul class="p-2">
-                <li>
-                  <a href="/designs/about-variants/variant-modern-1"
-                    >Moderno 1 (Hero minimalista)</a
-                  >
-                </li>
-                <li>
-                  <a href="/designs/about-variants/variant-modern-2"
-                    >Moderno 2 (Grid colorido)</a
-                  >
-                </li>
-                <li>
-                  <a href="/designs/about-variants/variant-modern-3"
-                    >Moderno 3 (Card elegante)</a
-                  >
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>Viajes</summary>
-              <ul class="p-2">
-                <li>
-                  <a href={`${import.meta.env.BASE_URL}designs/list-grid`}
-                    >Viajes Grid</a
-                  >
-                </li>
-                <li>
-                  <a href={`${import.meta.env.BASE_URL}designs/list-slider`}
-                    >Viajes Slider</a
-                  >
-                </li>
-                <li>
-                  <a href={`${import.meta.env.BASE_URL}designs/list-parallax`}
-                    >Viajes Parallax</a
-                  >
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a href={`${import.meta.env.BASE_URL}proyectos/`}>Proyectos</a>
-          </li>
-          <li><a href={`${import.meta.env.BASE_URL}sobre-mi`}>Sobre mí</a></li>
-        </ul>
-      </div>
-      <a
-        href={import.meta.env.BASE_URL}
-        class="btn btn-ghost text-xl hidden lg:flex">Pablo Dive</a
-      >
-    </div>
+      </li>
+      <li>
+        <a
+          href={`${import.meta.env.BASE_URL}empresas/`}
+          class="hover:text-blue-700 transition">Empresas</a
+        >
+      </li>
+      <li>
+        <a
+          href={`${import.meta.env.BASE_URL}buceo/`}
+          class="hover:text-blue-700 transition">Buceo</a
+        >
+      </li>
+      <li>
+        <a
+          href={`${import.meta.env.BASE_URL}avistamiento-cetaceos/`}
+          class="hover:text-blue-700 transition">Avistamiento de Cetáceos</a
+        >
+      </li>
+      <li>
+        <a
+          href={`${import.meta.env.BASE_URL}biologia-marina`}
+          class="hover:text-blue-700 transition">Biología Marina</a
+        >
+      </li>
+      <li>
+        <a
+          href={`${import.meta.env.BASE_URL}comunicacion-medioambiental`}
+          class="hover:text-blue-700 transition">Comunicación Medioambiental</a
+        >
+      </li>
+    </ul>
 
-    <div class="navbar-center lg:hidden">
-      <a href={import.meta.env.BASE_URL} class="btn btn-ghost text-xl"
-        >Pablo Dive</a
-      >
-    </div>
-
-    <!-- DESKTOP -->
-
-    <div class="navbar-end">
-      <ul class="menu menu-horizontal px-1 hidden lg:flex">
-        <li><a href={import.meta.env.BASE_URL}>Inicio</a></li>
-        <li>
-          <details>
-            <summary>Variantes Home</summary>
-            <ul class="p-2">
-              <li><a href="/index-variant2">Home Variante 2</a></li>
-              <li><a href="/index-variant3">Home Variante 3</a></li>
-              <li>
-                <a href="/index-variant6">Home Variante 6 (Super Visual)</a>
-              </li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <a href={`${import.meta.env.BASE_URL}comunicacion-medioambiental`}
-            >Comunicación Medioambiental</a
-          >
-        </li>
-        <li>
-          <a href={`${import.meta.env.BASE_URL}biologia-marina`}
-            >Biología Marina</a
-          >
-        </li>
-        <li>
-          <details>
-            <summary>Diseños Sobre mí</summary>
-            <ul class="p-2">
-              <li>
-                <a href="/designs/about-variants/variant-modern-1"
-                  >Moderno 1 (Hero minimalista)</a
-                >
-              </li>
-              <li>
-                <a href="/designs/about-variants/variant-modern-2"
-                  >Moderno 2 (Grid colorido)</a
-                >
-              </li>
-              <li>
-                <a href="/designs/about-variants/variant-modern-3"
-                  >Moderno 3 (Card elegante)</a
-                >
-              </li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details>
-            <summary>Viajes</summary>
-            <ul class="p-2">
-              <li>
-                <a href={`${import.meta.env.BASE_URL}designs/list-grid`}
-                  >Viajes Grid</a
-                >
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}designs/list-slider`}
-                  >Viajes Slider</a
-                >
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}designs/list-parallax`}
-                  >Viajes Parallax</a
-                >
-              </li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <a href={`${import.meta.env.BASE_URL}proyectos/`}>Proyectos</a>
-        </li>
-        <li><a href={`${import.meta.env.BASE_URL}sobre-mi`}>Sobre mí</a></li>
-      </ul>
+    <!-- Botón menú hamburguesa y tema -->
+    <!-- <div class="flex items-center gap-2">
       <button
         id="theme-toggle"
-        class="btn btn-ghost ml-2"
+        class="btn btn-ghost p-2"
         aria-label="Cambiar tema"
       >
         <span id="theme-icon">
@@ -226,44 +115,92 @@
               d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"></path>
           </svg>
         </span>
+      </button> -->
+    <div class="dropdown dropdown-end lg:hidden">
+      <button
+        tabindex="0"
+        role="button"
+        class="btn btn-ghost p-2"
+        aria-label="Abrir menú de navegación"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
       </button>
-      <script is:inline>
-        function setThemeIcon(isDark) {
-          const sun = document.getElementById("icon-sun");
-          const moon = document.getElementById("icon-moon");
-          if (sun && moon) {
-            sun.style.display = isDark ? "inline" : "none";
-            moon.style.display = isDark ? "none" : "inline";
-          }
-        }
-        function applyTheme(theme) {
-          document.documentElement.setAttribute("data-theme", theme);
-          setThemeIcon(theme === "dark");
-        }
-        function toggleTheme() {
-          const html = document.documentElement;
-          const currentTheme = html.getAttribute("data-theme");
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
-          applyTheme(newTheme);
-          localStorage.setItem("theme", newTheme);
-        }
-        window.addEventListener("DOMContentLoaded", () => {
-          const btn = document.getElementById("theme-toggle");
-          if (btn) {
-            btn.addEventListener("click", toggleTheme);
-          }
-          const savedTheme = localStorage.getItem("theme");
-          if (savedTheme) {
-            applyTheme(savedTheme);
-          } else {
-            // Si quieres que el sistema decida el tema inicial:
-            const prefersDark = window.matchMedia(
-              "(prefers-color-scheme: dark)",
-            ).matches;
-            applyTheme(prefersDark ? "dark" : "light");
-          }
-        });
-      </script>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+      >
+        <li><a href={import.meta.env.BASE_URL}>Inicio</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}empresas/`}>Empresas</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}buceo/`}>Buceo</a></li>
+        <li>
+          <a href={`${import.meta.env.BASE_URL}avistamiento-cetaceos/`}
+            >Avistamiento de Cetáceos</a
+          >
+        </li>
+        <li>
+          <a href={`${import.meta.env.BASE_URL}biologia-marina`}
+            >Biología Marina</a
+          >
+        </li>
+        <li>
+          <a href={`${import.meta.env.BASE_URL}comunicacion-medioambiental`}
+            >Comunicación Medioambiental</a
+          >
+        </li>
+      </ul>
     </div>
-  </div>
+  </nav>
+
+  <script is:inline>
+    function setThemeIcon(isDark) {
+      const sun = document.getElementById("icon-sun");
+      const moon = document.getElementById("icon-moon");
+      if (sun && moon) {
+        sun.style.display = isDark ? "inline" : "none";
+        moon.style.display = isDark ? "none" : "inline";
+      }
+    }
+    /* function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      setThemeIcon(theme === "dark");
+    } */
+    function applyTheme() {
+      document.documentElement.setAttribute("data-theme", "light");
+      setThemeIcon(false); // Opcional, para mostrar el icono de sol/luna
+    }
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      applyTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("theme-toggle");
+      if (btn) {
+        btn.addEventListener("click", toggleTheme);
+      }
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: light)",
+        ).matches;
+        applyTheme(prefersDark ? "dark" : "light");
+      }
+    });
+  </script>
 </header>

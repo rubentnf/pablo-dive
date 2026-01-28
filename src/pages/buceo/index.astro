@@ -1,0 +1,268 @@
+---
+import Image from "astro/components/Image.astro";
+
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Buceo | Pablo Dive"
+  description="Explora el mundo del buceo y sumérgete en la aventura submarina."
+>
+  <section
+    class="min-h-[40vh] flex items-center justify-center px-4 py-4 md:py-8"
+  >
+    <div class="max-w-4xl mx-auto text-center fade-in">
+      <p class="text-sm uppercase tracking-widest text-slate-500 mb-4">
+        Consejos, cursos y mi experiencia personal
+      </p>
+      <h1
+        class="text-3xl md:text-5xl font-light mb-6 text-slate-900 leading-tight"
+      >
+        Buceo
+      </h1>
+      <p
+        class="text-base md:text-lg text-left text-slate-600 font-light max-w-3xl mx-auto mb-4 leading-relaxed"
+      >
+        Empecé a bucear hace ya muchos años, un verano en el que decidí
+        apuntarme directamente al Open Water Diver sin pasar por el “bautizo”.
+        Aunque a mí me fue bien, hoy no lo recomiendo: mucha gente se apunta
+        directamente al curso, hace una inversión importante y luego descubre
+        que no se siente cómoda o que el buceo no es lo suyo.
+      </p>
+      <p
+        class="text-base md:text-lg text-left text-slate-600 font-light max-w-3xl mx-auto mb-4 leading-relaxed"
+      >
+        Por eso, mi primer consejo es siempre el mismo: <strong
+          >Haz un bautizo de buceo antes de apuntarte a cualquier curso</strong
+        >. Es la mejor forma de descubrir si realmente te gusta este mundillo y
+        si te sientes a gusto bajo el agua.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 2 - Large Image Right -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 fade-in-left">
+          <h2
+            class="text-2xl md:text-4xl md:text-left text-center font-light mb-4"
+          >
+            Escuelas de certificación: PADI, SSI, FEDAS y más
+          </h2>
+          <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+            Existen diferentes organizaciones que ofrecen cursos de buceo
+            recreativo, siendo las más comunes:
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center text-white text-sm"
+              >
+                ✓
+              </div>
+              <span class="text-lg text-slate-700"
+                >PADI (Professional Association of Diving Instructors)</span
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center text-white text-sm"
+              >
+                ✓
+              </div>
+              <span class="text-lg text-slate-700"
+                >SSI (Scuba Schools International)</span
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center text-white text-sm"
+              >
+                ✓
+              </div>
+              <span class="text-lg text-slate-700">FEDAS / CMAS</span>
+            </div>
+            <p class="text-xl text-slate-600 mb-8 leading-relaxed py-6">
+              Todas siguen estándares internacionales y te permitirán bucear en
+              prácticamente cualquier parte del mundo. La elección no suele ser
+              tan importante como elegir un buen centro de buceo, con
+              instructores profesionales y buenas referencias. Mi recomendación
+              es que siempre acudas a un centro de confianza, preferiblemente
+              uno donde sepas que otras personas han tenido buenas experiencias.
+              Si lo necesitas, puedes consultar los centros que yo recomiendo.
+            </p>
+          </div>
+        </div>
+        <div
+          class="order-1 lg:order-2 aspect-[4/3] bg-gradient-to-br from-blue-100 to-cyan-200 rounded-3xl fade-in-right"
+        >
+          <!-- class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" -->
+          <Image
+            src="/comunicacionAmbiental2.webp"
+            alt="Pablo Dive dando una conferencia sobre biología marina"
+            width={800}
+            height={600}
+            format="webp"
+            class="rounded-3xl object-cover w-full h-full"
+            sizes="(min-width: 768px) 33vw, 100vw"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-1 gap-16 items-center">
+        <div class="order-2 lg:order-1 fade-in-left">
+          <ul
+            class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+          >
+            <li>
+              <div class="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="timeline-start mb-10 md:text-end">
+                <time class="font-mono italic">Duración: 1 día</time>
+                <div class="text-lg font-black">Bautizo de buceo</div>
+                <p>
+                  <strong>Objetivo:</strong> probar la sensación de bucear en un entorno
+                  seguro.
+                </p>
+                <p>
+                  <strong>Recomendación:</strong> imprescindible antes de plantearte
+                  cualquier curso.
+                </p>
+              </div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="timeline-end md:mb-10">
+                <time class="font-mono italic"
+                  >Profundidad máxima: 18 metros</time
+                >
+                <div class="text-lg font-black">Open Water Diver</div>
+                <p>Qué aprenderás:</p>
+                <ul class="px-12 mt-1">
+                  <li>Uso básico del equipo</li>
+                  <li>Técnicas de respiración</li>
+                  <li>Control de flotabilidad</li>
+                  <li>Seguridad bajo el agua</li>
+                </ul>
+                <p class="py-2">
+                  <strong>Mi consejo:</strong> Después de obtenerlo, tómate un tiempo
+                  para ganar soltura. Practica, disfruta y consolida lo aprendido.
+                  No tengas prisa.
+                </p>
+              </div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="timeline-start mb-10 md:text-end">
+                <time class="font-mono italic"
+                  >Profundidad máxima: 30 metros</time
+                >
+                <div class="text-lg font-black">Advanced Open Water Diver</div>
+                <p>Qué aprenderás:</p>
+                <ul class="mt-1">
+                  <li>Buceo profundo</li>
+                  <li>Navegación subacuática</li>
+                  <li>Flotabilidad avanzada</li>
+                  <li>
+                    Especialidades opcionales (nocturno, barcos hundidos, etc.)
+                  </li>
+                </ul>
+              </div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="timeline-end md:mb-10">
+                <time class="font-mono italic">
+                  Aprender protocolos de seguridad, asistencia y prevención
+                </time>
+                <div class="text-lg font-black">
+                  Rescue Diver (Opcional pero MUY recomendable)
+                </div>
+                <p class="mt-2">
+                  Aunque no quieras ser profesional, este curso te da
+                  herramientas valiosísimas para resolver situaciones
+                  complicadas y entender mejor al resto de buceadores. No tengas
+                  prisa: <strong>el buceo no es una carrera</strong>
+                </p>
+                <p class="mt-2">
+                  Yo tardé muchos años en completar mis cursos. Preferí
+                  centrarme en practicar, mejorar mi flotabilidad, trabajar la
+                  respiración, ganar experiencia y sentirme cada vez más segura
+                  bajo el agua.
+                </p>
+                <p class="mt-2">
+                  El buceo es un aprendizaje continuo. No se trata de
+                  coleccionar certificaciones, sino de hacerlo bien, a tu ritmo
+                  y disfrutando.
+                </p>
+                <p class="mt-2">
+                  Así que mi consejo final es este: Disfruta del proceso, no
+                  corras y elige siempre centros profesionales y de confianza.
+                </p>
+              </div>
+              <hr />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
