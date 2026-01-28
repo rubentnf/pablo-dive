@@ -1,5 +1,22 @@
 ---
 import { Image } from "astro:assets";
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props as Props;
+
+const normalizePath = (path: string) => {
+  if (!path) return "/";
+  const noQuery = path.split("?")[0].split("#")[0];
+  const trimmed = noQuery.replace(/\/+$/g, "");
+  return trimmed === "" ? "/" : trimmed;
+};
+
+const activePath = normalizePath(currentPath);
+
+const isActive = (path: string) => activePath === normalizePath(path);
 ---
 
 <header
@@ -38,43 +55,77 @@ import { Image } from "astro:assets";
       <li>
         <a
           href={import.meta.env.BASE_URL}
-          class="hover:text-blue-700 transition">Inicio</a
+          class={`transition ${
+            isActive("/")
+              ? "text-blue-800 dark:text-blue-300 font-semibold"
+              : "hover:text-blue-700 dark:hover:text-blue-300"
+          }`}
+          aria-current={isActive("/") ? "page" : undefined}>Inicio</a
         >
       </li>
       <li>
         <a
           href={`${import.meta.env.BASE_URL}empresas/`}
-          class="hover:text-blue-700 transition">Empresas</a
+          class={`transition ${
+            isActive("/empresas")
+              ? "text-blue-800 dark:text-blue-300 font-semibold"
+              : "hover:text-blue-700 dark:hover:text-blue-300"
+          }`}
+          aria-current={isActive("/empresas") ? "page" : undefined}>Empresas</a
         >
       </li>
       <li>
         <a
           href={`${import.meta.env.BASE_URL}buceo/`}
-          class="hover:text-blue-700 transition">Buceo</a
+          class={`transition ${
+            isActive("/buceo")
+              ? "text-blue-800 dark:text-blue-300 font-semibold"
+              : "hover:text-blue-700 dark:hover:text-blue-300"
+          }`}
+          aria-current={isActive("/buceo") ? "page" : undefined}>Buceo</a
         >
       </li>
       <li>
         <a
           href={`${import.meta.env.BASE_URL}avistamiento-cetaceos/`}
-          class="hover:text-blue-700 transition">Avistamiento de Cetáceos</a
+          class={`transition ${
+            isActive("/avistamiento-cetaceos")
+              ? "text-blue-800 dark:text-blue-300 font-semibold"
+              : "hover:text-blue-700 dark:hover:text-blue-300"
+          }`}
+          aria-current={isActive("/avistamiento-cetaceos") ? "page" : undefined}
+          >Avistamiento de Cetáceos</a
         >
       </li>
       <li>
         <a
           href={`${import.meta.env.BASE_URL}biologia-marina`}
-          class="hover:text-blue-700 transition">Biología Marina</a
+          class={`transition ${
+            isActive("/biologia-marina")
+              ? "text-blue-800 dark:text-blue-300 font-semibold"
+              : "hover:text-blue-700 dark:hover:text-blue-300"
+          }`}
+          aria-current={isActive("/biologia-marina") ? "page" : undefined}
+          >Biología Marina</a
         >
       </li>
       <li>
         <a
           href={`${import.meta.env.BASE_URL}comunicacion-medioambiental`}
-          class="hover:text-blue-700 transition">Comunicación Medioambiental</a
+          class={`transition ${
+            isActive("/comunicacion-medioambiental")
+              ? "text-blue-800 dark:text-blue-300 font-semibold"
+              : "hover:text-blue-700 dark:hover:text-blue-300"
+          }`}
+          aria-current={isActive("/comunicacion-medioambiental")
+            ? "page"
+            : undefined}>Comunicación Medioambiental</a
         >
       </li>
     </ul>
 
     <!-- Botón menú hamburguesa y tema -->
-    <!-- <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2">
       <button
         id="theme-toggle"
         class="btn btn-ghost p-2"
@@ -117,93 +168,133 @@ import { Image } from "astro:assets";
               d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"></path>
           </svg>
         </span>
-      </button> -->
-    <div class="dropdown dropdown-end lg:hidden">
-      <button
-        tabindex="0"
-        role="button"
-        class="btn btn-ghost p-2"
-        aria-label="Abrir menú de navegación"
-        aria-haspopup="true"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
       </button>
-      <ul
-        tabindex="-1"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
-      >
-        <li><a href={import.meta.env.BASE_URL}>Inicio</a></li>
-        <li><a href={`${import.meta.env.BASE_URL}empresas/`}>Empresas</a></li>
-        <li><a href={`${import.meta.env.BASE_URL}buceo/`}>Buceo</a></li>
-        <li>
-          <a href={`${import.meta.env.BASE_URL}avistamiento-cetaceos/`}
-            >Avistamiento de Cetáceos</a
+      <div class="dropdown dropdown-end lg:hidden">
+        <button
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost p-2"
+          aria-label="Abrir menú de navegación"
+          aria-haspopup="true"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-        </li>
-        <li>
-          <a href={`${import.meta.env.BASE_URL}biologia-marina`}
-            >Biología Marina</a
-          >
-        </li>
-        <li>
-          <a href={`${import.meta.env.BASE_URL}comunicacion-medioambiental`}
-            >Comunicación Medioambiental</a
-          >
-        </li>
-      </ul>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <ul
+          tabindex="-1"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+        >
+          <li>
+            <a
+              href={import.meta.env.BASE_URL}
+              aria-current={isActive("/") ? "page" : undefined}
+              class={isActive("/") ? "font-semibold text-blue-700" : undefined}
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${import.meta.env.BASE_URL}empresas/`}
+              aria-current={isActive("/empresas") ? "page" : undefined}
+              class={isActive("/empresas")
+                ? "font-semibold text-blue-700"
+                : undefined}>Empresas</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${import.meta.env.BASE_URL}buceo/`}
+              aria-current={isActive("/buceo") ? "page" : undefined}
+              class={isActive("/buceo")
+                ? "font-semibold text-blue-700"
+                : undefined}>Buceo</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${import.meta.env.BASE_URL}avistamiento-cetaceos/`}
+              aria-current={isActive("/avistamiento-cetaceos")
+                ? "page"
+                : undefined}
+              class={isActive("/avistamiento-cetaceos")
+                ? "font-semibold text-blue-700"
+                : undefined}>Avistamiento de Cetáceos</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${import.meta.env.BASE_URL}biologia-marina`}
+              aria-current={isActive("/biologia-marina") ? "page" : undefined}
+              class={isActive("/biologia-marina")
+                ? "font-semibold text-blue-700"
+                : undefined}>Biología Marina</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${import.meta.env.BASE_URL}comunicacion-medioambiental`}
+              aria-current={isActive("/comunicacion-medioambiental")
+                ? "page"
+                : undefined}
+              class={isActive("/comunicacion-medioambiental")
+                ? "font-semibold text-blue-700"
+                : undefined}>Comunicación Medioambiental</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-  </nav>
 
-  <script is:inline>
-    function setThemeIcon(isDark) {
-      const sun = document.getElementById("icon-sun");
-      const moon = document.getElementById("icon-moon");
-      if (sun && moon) {
-        sun.style.display = isDark ? "inline" : "none";
-        moon.style.display = isDark ? "none" : "inline";
+    <script is:inline>
+      function setThemeIcon(isDark) {
+        const sun = document.getElementById("icon-sun");
+        const moon = document.getElementById("icon-moon");
+        if (sun && moon) {
+          sun.style.display = isDark ? "inline" : "none";
+          moon.style.display = isDark ? "none" : "inline";
+        }
       }
-    }
-    /* function applyTheme(theme) {
-      document.documentElement.setAttribute("data-theme", theme);
-      setThemeIcon(theme === "dark");
-    } */
-    function applyTheme() {
-      document.documentElement.setAttribute("data-theme", "light");
-      setThemeIcon(false); // Opcional, para mostrar el icono de sol/luna
-    }
-    function toggleTheme() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute("data-theme");
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      applyTheme(newTheme);
-      localStorage.setItem("theme", newTheme);
-    }
-    window.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-toggle");
-      if (btn) {
-        btn.addEventListener("click", toggleTheme);
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        setThemeIcon(theme === "dark");
       }
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) {
-        applyTheme(savedTheme);
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: light)",
-        ).matches;
-        applyTheme(prefersDark ? "dark" : "light");
+      /* function applyTheme() {
+        document.documentElement.setAttribute("data-theme", "light");
+        setThemeIcon(false); 
+      } */
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
       }
-    });
-  </script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("theme-toggle");
+        if (btn) {
+          btn.addEventListener("click", toggleTheme);
+        }
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          applyTheme(savedTheme);
+        } else {
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: light)",
+          ).matches;
+          applyTheme(prefersDark ? "dark" : "light");
+        }
+      });
+    </script>
+  </nav>
 </header>
