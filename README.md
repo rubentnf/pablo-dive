@@ -10,7 +10,6 @@ El proyecto utiliza un stack moderno centrado en el rendimiento y la experiencia
 
 - **Framework**: [Astro](https://astro.build/) (v5)
 - **Estilos**: [Tailwind CSS](https://tailwindcss.com/) (v4) con [DaisyUI](https://daisyui.com/)
-- **Animaciones**: [GSAP](https://gsap.com/) y [Lenis](https://lenis.studio/) (Smooth Scroll)
 - **Despliegue**: [Vercel](https://vercel.com/) (Adapter Static)
 - **CMS / Contenido**: Content Island
 - **Calidad de Código**: ESLint, Prettier, Husky, Lint-staged
