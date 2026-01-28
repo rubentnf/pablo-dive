@@ -9,12 +9,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/((?!mantenimiento).*)",
-      "destination": "/mantenimiento",
-      "permanent": false
-    }
   ]
 }
